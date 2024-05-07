@@ -1,0 +1,28 @@
+[project]
+name = "markmoji-science"
+version = "0.0.0" 
+description = "Adds Markmoji handlers useful for academics."
+authors = [
+  { name = "Todd Parsons", email = "todd.e.parsons@gmail.com" },
+]
+license = { text = "CC" }
+
+dependencies = [
+  "markmoji",
+]
+
+[project.optional-dependencies]
+# dependencies for building the docs
+docs = [
+  "markmoji",
+  "mkdocs",
+]
+# dependencies for running the test suite
+tests = [
+  "markmoji",
+  "pytest",
+]
+
+[project.entry-points."markmoji.handlers"]
+# insert handlers into Markmoji
+AlmetricHandler = "markmoji_science.handlers:AlmetricHandler"
